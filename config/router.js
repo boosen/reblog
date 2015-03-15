@@ -1,12 +1,16 @@
 module.exports = function(app) {
 	
-	var user = require('../controller/user');
-	app.get('/login', user.loginView);
-	app.post('/login', user.loginView);
-	app.route('login')
-			// .all(user.loginAll)
-			.get(user.loginView)
-			.post(user.login);
+	app.get('/', function(req, res) {
+		// res.render('index', {title:'Reblog'});
+		res.redirect('/login');
+	})
 
+	var admin = require('../controller/admin');
+
+	app.all('/admin/*', admin.checkLogin);
+	app.route('/login')
+			.get(admin.loginView)
+			.post(admin.login);
+	app.get('/admin/index', admin.index);
 	// var blog = require('./blog');
 };

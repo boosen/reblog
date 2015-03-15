@@ -1,0 +1,25 @@
+var settings = require('../setting');
+
+exports.login = function(req, res, next) {
+	if(req.body.email != settings.loginUser || req.body.password != settings.loginPwd) {
+		return res.redirect('/login');
+	} else {
+		req.session.username = 'Bushen';
+		return res.redirect('/admin/index');
+	}
+};
+
+exports.loginView = function(req, res, next) {
+	return res.render('admin/login');
+}
+
+exports.index = function(req, res) {
+	return res.render('admin/index');
+}
+
+exports.checkLogin = function(req, res, next) {
+	if (!req.session.username) {
+		res.redirect('/login');
+	}
+	return next();
+}
