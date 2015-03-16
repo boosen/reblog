@@ -23,3 +23,7 @@ exports.checkLogin = function(req, res, next) {
 	}
 	return next();
 }
+
+exports.manageBlog = function(req, res) {
+	res.render('admin/manage_blog')
+}

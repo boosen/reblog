@@ -133,18 +133,19 @@ html(lang='en')
         // Sidebar Menu Items - These collapse to the responsive navigation menu on small screens
         .collapse.navbar-collapse.navbar-ex1-collapse
           ul.nav.navbar-nav.side-nav
-            li.active
-              a(href='index.html')
-                i.fa.fa-fw.fa-dashboard
-                |  Dashboard
+            mixin toolbar(title, href, subclass, active)
+              li(class=active ? 'active' : '')
+                a(href=href)
+                  i(class='fa fa-fw' class=subclass)
+                  | #{title}
+                  
+            +toolbar('Dashboard', '/admin/index','fa-dashboard', flase)
+            +toolbar('Manage blogs', '/admin/manage-blog','fa-table', flase)
+            
             li
-              a(href='charts.html')
+              a(href='#')
                 i.fa.fa-fw.fa-bar-chart-o
                 |  Charts
-            li
-              a(href='tables.html')
-                i.fa.fa-fw.fa-table
-                |  Tables
             li
               a(href='forms.html')
                 i.fa.fa-fw.fa-edit

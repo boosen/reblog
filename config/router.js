@@ -12,5 +12,6 @@ module.exports = function(app) {
 			.get(admin.loginView)
 			.post(admin.login);
 	app.get('/admin/index', admin.index);
+	app.get('/admin/manage-blog', admin.manageBlog)
 	// var blog = require('./blog');
 };
