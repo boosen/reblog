@@ -39,9 +39,19 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use(function(req, res, next) {
+  res.locals.username = req.session.username;
+  var err = req.session.error;
+  delete req.session.error;
+  res.locals.message = '';
+  if (err) res.locals.message = '<div class="alert alert-danger" role="alert">' + err + '</div>';
+  next();
+});
 // app.use('/', routes);
 // app.use('/users', users);
 require('./config/router')(app);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

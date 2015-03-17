@@ -1,0 +1,45 @@
+.collapse.navbar-collapse.navbar-ex1-collapse
+  ul.nav.navbar-nav.side-nav
+    mixin toolbar(title, href, subclass, active)
+      li(class=active ? 'active' : '')
+        a(href=href)
+          i(class='fa fa-fw' class=subclass)
+          | #{title}
+
+    +toolbar('Dashboard', '/admin/index','fa-dashboard', isDBActive)
+    +toolbar('Manage blogs', '/admin/manage-blog','fa-table', isMBActive)
+    
+    li
+      a(href='#')
+        i.fa.fa-fw.fa-bar-chart-o
+        |  Charts 
+    li
+      a(href='/admin/post-blog')
+        i.fa.fa-fw.fa-edit
+        |  Post Blog
+    li
+      a(href='bootstrap-elements.html')
+        i.fa.fa-fw.fa-desktop
+        |  Bootstrap Elements
+    li
+      a(href='bootstrap-grid.html')
+        i.fa.fa-fw.fa-wrench
+        |  Bootstrap Grid
+    li
+      a(href='javascript:;', data-toggle='collapse', data-target='#demo')
+        i.fa.fa-fw.fa-arrows-v
+        |  Dropdown 
+        i.fa.fa-fw.fa-caret-down
+      ul#demo.collapse
+        li
+          a(href='#') Dropdown Item
+        li
+          a(href='#') Dropdown Item
+    li
+      a(href='blank-page.html')
+        i.fa.fa-fw.fa-file
+        |  Blank Page
+    li
+      a(href='index-rtl.html')
+        i.fa.fa-fw.fa-dashboard
+        |  RTL Dashboard

@@ -14,7 +14,7 @@ exports.loginView = function(req, res, next) {
 }
 
 exports.index = function(req, res) {
-	return res.render('admin/index');
+	return res.render('admin/index', {isDBActive:true});
 }
 
 exports.checkLogin = function(req, res, next) {
@@ -24,6 +24,15 @@ exports.checkLogin = function(req, res, next) {
 	return next();
 }
 
+exports.logOut = function(req, res) {
+	req.session.username = null;
+	return res.redirect('/login');
+}
+
 exports.manageBlog = function(req, res) {
-	res.render('admin/manage_blog')
+	res.render('admin/manage_blog', {isMBActive:true})
+}
+
+exports.postBlogView = function(req, res) {
+	res.render('admin/post_blog');
 }

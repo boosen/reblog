@@ -1,6 +1,6 @@
 module.exports = {
-	cookiePaser: 'bushen',
-	sessionSecret: 'bushen',
+	cookiePaser: 'captain',
+	sessionSecret: 'captain',
 	db: 'reblog',
 	host: 'localhost',
 	root: __dirname,
