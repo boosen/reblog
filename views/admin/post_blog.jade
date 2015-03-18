@@ -19,9 +19,9 @@ block content
             | post blog
   .row
     .col-lg-12
-      input(class="form-control post-title" type="text" name="title" placeholder="write title here ..")
-      legend
-      div(id="epiceditor")
+      input(class="form-control post-title post-com" type="text" name="title" placeholder="write title here ..")
+      legend.post-com
+      div#epiceditor
       textarea(id='content_editor' name='content' style='display:none;')
 
 block scripts
