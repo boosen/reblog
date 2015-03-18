@@ -19,7 +19,7 @@ var opts = {
     toggleFullscreen: '全屏'
   },
   autogrow: {
-    minHeight: 400
+    minHeight: 300
   }
 }
 var editor = new EpicEditor(opts);
