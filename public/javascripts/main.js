@@ -43,6 +43,10 @@ $(function(){
       tagArea.append($("<span/>").addClass('tag-info').html(
         $("<i/>").addClass("glyphicon glyphicon-tag")).append(" " + tags[i]));
     }
-  }  
+  }
+
+  $("#post-btn").click(function(){
+    
+  });
 });
 

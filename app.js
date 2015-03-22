@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session')
 var mongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
-var settings = require('./setting')
+var settings = require('./setting');
+var expressValidator = require('express-validator');
 
 // var routes = require('./routes/index');
 // var users = require('./routes/users');
@@ -47,6 +48,24 @@ app.use(function(req, res, next) {
   if (err) res.locals.message = '<div class="alert alert-danger" role="alert">' + err + '</div>';
   next();
 });
+
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
+
 // app.use('/', routes);
 // app.use('/users', users);
 require('./config/router')(app);

@@ -16,7 +16,8 @@ module.exports = function(app) {
 	app.get('/admin/manage-blog', admin.manageBlog)
 
 	app.route('/admin/post-blog')
-			.get(admin.postBlogView);
+			.get(admin.postBlogView)
+			.post(admin.postBlog);
 			
 	// var blog = require('./blog');
 };

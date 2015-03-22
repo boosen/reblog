@@ -6,23 +6,22 @@ block title
 block content
   .row
     .col-lg-12
-      input(class="form-control post-title post-com" type="text" name="title" placeholder="write title here ..")
-      legend
-      div#epiceditor
-      textarea(id='content_editor' name='content' style='display:none;')
-  .row
-    .col-lg-12
-      .tag-area.post-com
-        span.tag-info
-          i.glyphicon.glyphicon-tag
-          | &nbsp;fkf
-        span.tag-info
-          i.glyphicon.glyphicon-tag
-          | &nbsp;fkf
-      input(id="tag-input" class="form-control post-com" type="text" placeholder="write tag here separate with blank space")
-  .row
-    .col-lg-12
-        button(id="post-btn" type="button" class="post-com btn btn-primary") SUBMIT
+      form(method="post" action="/admin/post-blog")
+        input(class="form-control post-title post-com" type="text" name="title" required="required" placeholder="write title here ..")
+        legend
+        div#epiceditor
+        textarea(id='content_editor' required="required" name='content' style='display:none;')
+
+        .tag-area.post-com
+          span.tag-info
+            i.glyphicon.glyphicon-tag
+            | &nbsp;fkf
+          span.tag-info
+            i.glyphicon.glyphicon-tag
+            | &nbsp;fkf
+        input(id="tag-input" name="tags" class="form-control post-com" type="text" placeholder="write tag here separate with blank space")
+
+        button(id="post-btn" type="submit" class="post-com btn btn-primary") SUBMIT
 
 block scripts
   script(src="/bower/epiceditor/epiceditor/js/epiceditor.js")
