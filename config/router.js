@@ -6,6 +6,7 @@ module.exports = function(app) {
 	})
 
 	var admin = require('../controller/admin');
+	var blog = require('../controller/blog');
 
 	app.all('/admin/*', admin.checkLogin);
 	app.route('/login')
@@ -13,11 +14,15 @@ module.exports = function(app) {
 		.post(admin.login);
 	app.get('/logout', admin.logOut);
 	app.get('/admin/index', admin.index);
-	app.get('/admin/manage-blog', admin.manageBlog)
+
+	app.get('/admin/manage-blog', blog.manageBlog);
 
 	app.route('/admin/post-blog')
-			.get(admin.postBlogView)
-			.post(admin.postBlog);
+		.get(blog.postBlogView)
+		.post(blog.postBlog);
+
+	app.route('/admin/blog/:id')
+		.delete(blog.deleteBlog);
 			
 	// var blog = require('./blog');
 };

@@ -8,15 +8,12 @@
 
     +toolbar('Dashboard', '/admin/index','fa-dashboard', isDBActive)
     +toolbar('Manage blogs', '/admin/manage-blog','fa-table', isMBActive)
+    +toolbar('Post Blogs', '/admin/post-blog','fa-edit', isPBActive)
     
     li
       a(href='#')
         i.fa.fa-fw.fa-bar-chart-o
         |  Charts 
-    li
-      a(href='/admin/post-blog')
-        i.fa.fa-fw.fa-edit
-        |  Post Blog
     li
       a(href='bootstrap-elements.html')
         i.fa.fa-fw.fa-desktop

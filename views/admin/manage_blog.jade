@@ -24,22 +24,35 @@ block content
           thead
             tr
               th #
-              th First Name
-              th Last Name
-              th Username
+              th title
+              th PV
+              th Date
+              th Ctrl
           tbody
-            tr
-              th(scope='row') 1
-              td Mark
-              td Otto
-              td @mdo
-            tr
-              th(scope='row') 2
-              td Jacob
-              td Thornton
-              td @fat
-            tr
-              th(scope='row') 3
-              td Larry
-              td the Bird
-              td @twitter
+            each blog, index in blogs
+              tr
+                th(scope='row')= index+1
+                td= blog.title
+                td= blog.pv
+                td= blog.time.day + ' ' + blog.time.minute
+                td 
+                  button(type="button" onclick="window.location.href=\"/admin/blog/" + blog._id + "\"" class="btn btn-success blog-edit") Edit
+                  button(type="button" data-url="/admin/blog/" + blog._id class="btn btn-danger blog-del") Delete
+block scripts
+  script.
+    $('.blog-del').click(function(){
+      var url = $(this).data('url');
+      var _this = $(this);
+
+      $.ajax({
+        type: 'delete',
+        url: url,
+        success: function(res) {
+          if (res.success) {
+            _this.parent().parent().remove();
+          }
+        }
+      });
+    })
+
+

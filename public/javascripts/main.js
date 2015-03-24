@@ -14,9 +14,9 @@ var opts = {
     bar: "auto"
   },
   string: {
-    togglePreview: '预览',
-    toggleEdit: '编辑',
-    toggleFullscreen: '全屏'
+    togglePreview: 'preview',
+    toggleEdit: 'edit',
+    toggleFullscreen: 'full-screen'
   },
   autogrow: {
     minHeight: 300,

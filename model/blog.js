@@ -36,6 +36,10 @@ var blogSchema = new Schema({
     ]
 });
 
+blogSchema.Statics = {
+
+}
+
 var Blog = mongoose.model('Blog', blogSchema);
 
 module.exports = Blog;
