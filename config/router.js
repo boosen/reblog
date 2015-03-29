@@ -1,9 +1,7 @@
 module.exports = function(app) {
-	
-	app.get('/', function(req, res) {
-		// res.render('index', {title:'Reblog'});
-		res.redirect('/login');
-	})
+	var home = require('../controller/home');
+
+	app.get('/', home.index)
 
 	var admin = require('../controller/admin');
 	var blog = require('../controller/blog');

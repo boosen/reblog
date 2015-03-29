@@ -1,0 +1,385 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //
+      ===========================
+      THEME INFO
+      ===========================
+    meta(name='description', content='A free Bootstrap powerd HTML template exclusively crafted for the super lazy designers like me who designed thousand of websites till today but never got a chance to build one himself.')
+    meta(name='keywords', content='Free Portfolio Template, Free Template, Free Bootstrap Template, Dribbble Portfolio Template, Free HTML5 Template')
+    meta(name='author', content='EvenFly Team')
+    //
+      DEVEOPER'S NOTE:
+      This is a free Bootstrap powered HTML template from EvenFly. Feel free to download, modify and use it for yourself or your clients as long there is no money involved.
+      Please don't try to sale it from anywhere; because I want it to be free, forever. If you sale it, That's me who deserves the money, not you :)
+    //
+      ===========================
+      SITE TITLE
+      ===========================
+    title Drifolio Bootstrap
+    // This is what you see on your browser tab
+    //
+      ===========================
+      FAVICONS
+      ===========================
+    link(rel='icon', href='img/favicon.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='img/apple-touch-icon-ipad-retina.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='img/apple-touch-icon-iphone-retina.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='img/apple-touch-icon-ipad.png')
+    link(rel='apple-touch-icon', sizes='57x57', href='img/apple-touch-icon-iphone.png')
+    //
+      ===========================
+      STYLESHEETS
+      ===========================
+    link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/home/css/preloader.css')
+    link(rel='stylesheet', href='/home/css/style.css')
+    link(rel='stylesheet', href='/home/css/responsive.css')
+    link(rel='stylesheet', href='/home/css/animate.css')
+    //
+      ===========================
+      ICONS:
+      ===========================
+    link(rel='stylesheet', href='css/simple-line-icons.css')
+    //
+      ===========================
+      GOOGLE FONTS
+      ===========================
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Antic|Raleway:300')
+    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    //
+      ===========================
+      GOOGLE ANALYTICS (Optional)
+      ===========================
+    // Replace this line with your analytics code
+    // Analytics end
+  body(data-spy='scroll')
+    // Preloader
+    #preloader
+      #status
+        .loadicon.icon-moustache.wow.tada.infinite(data-wow-duration='8s')
+    header
+      //
+        ===========================
+        HERO AREA
+        ===========================
+      #hero
+        .container.herocontent
+          h2.wow.fadeInUp(data-wow-duration='2s') Drifolio the Awesome
+          h4.wow.fadeInDown(data-wow-duration='3s')
+            | Exclusively crafted  for the super lazy designers like me who designed thousand of websites till today but never got a chance to build one himself.
+        // Featured image on the Hero area
+        img.heroshot.wow.bounceInUp(data-wow-duration='4s', src='/home/img/hero-img.png', alt='Featured Work')
+      // HERO AREA END
+      //
+        ===========================
+        NAVBAR START
+        ===========================
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#hero')
+              // Replace Drifolio Bootstrap with your Site Name and remove icon-grid to remove the placeholder icon
+              span.brandicon.icon-grid
+              span.brandname Drifolio Bootstrap
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              // YOUR NAVIGATION ITEMS STRAT BELOW
+              li
+                a(href='#about')
+                  span.btnicon.icon-user
+                  | About
+              li
+                a(href='#services')
+                  span.btnicon.icon-cup
+                  | Services
+              li
+                a(href='#portfolio')
+                  span.btnicon.icon-rocket
+                  | Portfolio
+              li
+                a(href='#testimonials')
+                  span.btnicon.icon-bubble
+                  | Testimonials
+              // don't forget to replace my email address below with yours
+              li
+                a(href='mailto:m@creatrix.us')
+                  span.btnicon.icon-envelope-open
+                  | Contact
+              li.active
+                a(href='')
+                  span.btnicon.icon-cloud-download
+                  | Download CV
+          // .nav-collapse
+      // navbar end
+    // header end
+    //
+      ===========================
+      FEATURED CLIENTS SECTION START
+      ===========================
+    #clients
+      .container
+        .col-md-3
+          h4 Proudly worked with:
+        .col-md-9
+          ul
+            // CLIENTS LOGO
+            li
+              img(src='/home/img/payoneer.png', alt='Payoneer')
+            li
+              img(src='/home/img/amazon.png', alt='Amazon')
+            li
+              img(src='/home/img/elance-odesk.png', alt='Elance-oDesk')
+            li
+              img(src='/home/img/curb.png', alt='Curb Envy')
+          // CLIENTS LOGO END
+      hr
+      // SECTION SEPARETOR LINE
+    // FEATURED CLIENTS SECTION END
+    //
+      ===========================
+      ABOUT SECTION START
+      ===========================
+    #about.container
+      // LEFT PART OF THE ABOUT SECTION
+      .col-md-6
+        .row
+          h2.wow.fadeInDown(data-wow-duration='2s') I'm Mamun Srizon from Bangladesh
+          h4.wow.fadeInUp(data-wow-duration='3s')
+            | A freelance UI/UX wizard as well as a Daydreamer who workes on the Graveyard Shift and sleeps all the day!
+          p.wow.fadeInDown(data-wow-duration='3s')
+            | I'm gonna build me an airport, put my name on it. Why, Michael? So you can fly away from your feelings? I don't care if it takes from now till the end of Shrimpfest.
+          p.wow.fadeInDown(data-wow-duration='3s')
+            | Bugger bag egg's old boy willy jolly scrote munta skive pillock, bloody shambles nose rag blummin' scrote narky ever so, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          a.dribbble-follow-button.wow.bounce(href='http://dribbble.com/srizon') Follow
+        // ABOUT INFO END
+        .myapps.row
+          h5 Tools and apps I use everyday:
+          ul
+            // FAVORITE APP ICONS START
+            li
+              img.wow.animated.bounceInUp(data-wow-duration='1s', src='/home/img/photoshop.svg', alt='Photoshop')
+            li
+              img.wow.bounceInUp(data-wow-duration='2s', src='/home/img/illustrator.svg', alt='Illustrator')
+            li
+              img.wow.bounceInUp(data-wow-duration='3s', src='/home/img/flash.svg', alt='Adobe Flash')
+            li
+              img.wow.animated.bounceInUp(data-wow-duration='4s', src='/home/img/after_effects.svg', alt='After Effects')
+            li
+              img.wow.bounceInUp(data-wow-duration='5s', src='/home/img/indesign.svg', alt='InDesign')
+          // FAVORITE APP ICONS END
+      // LEFT PART OF THE ABOUT SECTION END
+      // Left part end
+      // RIGHT PART OF THE ABOUT SECTION
+      .col-md-6.wow.fadeInUp.myphoto(data-wow-duration='4s')
+        img(src='/home/img/user.png', alt='Mamun Srizon')
+      // RIGHT PART OF THE ABOUT SECTION END
+    // ABOUT SECTION END
+    hr
+    // SECTION SEPARETOR LINE
+    //
+      ===========================
+      SERVICE SECTION START
+      ===========================
+    #services.container
+      // SERVICE SECTION HEADING START
+      .sectionhead.row.wow.fadeInUp
+        span.bigicon.icon-cup
+        h3 This is what I can do for you
+        hr.separetor
+      // SERVICE SECTION HEADING END
+      // SERVICE ITEMS START
+      .row
+        .col-md-6.col-lg-4.wow.fadeInUp(data-wow-duration='3s')
+          img(src='/home/img/s1.png', alt='')
+          h4 Responsive Web Design
+          p
+            | Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.
+        // ITEM END
+        .col-md-6.col-lg-4.wow.fadeInUp(data-wow-duration='3s')
+          img(src='/home/img/s2.png', alt='')
+          h4 Android App Design
+          p
+            | Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.
+        // ITEM END
+        .col-md-6.col-lg-4.wow.fadeInUp(data-wow-duration='3s')
+          img(src='/home/img/s3.png', alt='')
+          h4 iOS App Design
+          p
+            | Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.
+        // ITEM END
+        .col-md-6.col-lg-4.wow.fadeInUp(data-wow-duration='3s')
+          img(src='/home/img/s4.png', alt='')
+          h4 Windows App Design
+          p
+            | Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.
+        // ITEM END
+        .col-md-6.col-lg-4.wow.fadeInUp(data-wow-duration='3s')
+          img(src='/home/img/s5.png', alt='')
+          h4 Brand Identity Design
+          p
+            | Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.
+        // ITEM END
+        .col-md-6.col-lg-4.wow.fadeInUp(data-wow-duration='3s')
+          img(src='/home/img/s6.png', alt='')
+          h4 CMYK Print Design
+          p
+            | Grinder affogato, dark, sweet carajillo, flavour seasonal aroma single origin cream. Percolator. Eligendi impedit dolores nulla.
+        // ITEM END
+      // SERVICE ITEMS END
+    // SERVICE SECTION END
+    //
+      ===========================
+      PORTFOLIO SECTION START
+      ===========================
+    #portfolio
+      .sectionhead.wow.bounceInUp(data-wow-duration='2s')
+        span.bigicon.icon-rocket
+        h3 A few recent works
+        hr.separetor
+      // PORTFOLIO SECTION HEAD END
+      // PORTFOLIO ITEMS START
+      .portfolioitems.container
+        ul
+          #shotsByPlayerId  
+        // REFER TO THE js/drifolio.js
+      // PORTFOLIO ITEMS END
+      // Replace the URL below with your dribbble profile URL
+      a.btn.btn-default.wow.fadeInUp(href='http://dribbble.com/srizon', role='button')
+        span.btnicon.icon-social-dribbble
+        span.button_text View all items
+    // PORTFOLIO SECTION END
+    //
+      ===========================
+      TESTIMONIAL SECTION START
+      ===========================
+    #testimonials.container
+      .sectionhead.wow.bounceInUp(data-wow-duration='2s')
+        span.bigicon.icon-bubbles
+        h3 This is what I love to listen
+        h4
+          | Expedita nobis natus doloribus blanditiis quos, atque voluptatem, veritatis soluta eveniet ea!
+        hr.separetor
+      // TESTIMONIAL SECTIONHEAD END
+      // TESTIMONIAL ITEMS START
+      .row
+        // 1ST TESTIMONIAL ITEM
+        .col-md-6.wow.bounceIn(data-wow-duration='2s')
+          .clientsphoto
+            img(src='/home/img/dan.jpg', alt='Dan')
+          .quote
+            blockquote
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia et pariatur ipsam tempora officia ea iusto expedita, nulla, hic odit saepe repellat nesciunt dolorum, officiis laborum ad, aliquam. Quos, et.
+            h5 Dan Cederholm
+            p Co-Founder, Dribbble
+        // 1ST TESTIMONIAL ITEM END
+        // 2ND TESTIMONIAL ITEM
+        .col-md-6.wow.bounceIn(data-wow-duration='3s')
+          .clientsphoto
+            img(src='/home/img/bill.jpg', alt='Bill')
+          .quote
+            blockquote
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia et pariatur ipsam tempora officia ea iusto expedita, nulla, hic odit saepe repellat nesciunt dolorum, officiis laborum ad, aliquam. Quos, et. lorem
+            h5 Bill S Kenney
+            p Art Director at Focus Lab LLC.
+        // 2ND TESTIMONIAL ITEM END
+        // 3RD TESTIMONIAL ITEM
+        .col-md-6.wow.bounceIn(data-wow-duration='3s')
+          .clientsphoto
+            img(src='/home/img/eric.png', alt='Eric')
+          .quote
+            blockquote
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia et pariatur ipsam tempora officia ea iusto expedita, nulla, hic odit saepe repellat nesciunt dolorum, officiis laborum ad, aliquam. Quos, et.
+            h5 Eric Hoffman
+            p Principal Designer, JellyJar
+        // 3RD TESTIMONIAL ITEM END
+        // 4TH TESTIMONIAL ITEM
+        .col-md-6.wow.bounceIn(data-wow-duration='2s')
+          .clientsphoto
+            img(src='/home/img/ramil.jpg', alt='Ramil')
+          .quote
+            blockquote
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia et pariatur ipsam tempora officia ea iusto expedita, nulla, hic odit saepe repellat nesciunt dolorum, officiis laborum ad, aliquam. Quos, et.
+            h5 Ramil Derogongun
+            p Visual Designer, Bluroon
+        // 4TH TESTIMONIAL ITEM END
+    // TESTIMONIAL SECTION END
+    //
+      ===========================
+      FOOTER START
+      ===========================
+    footer
+      .container
+        span.bigicon.icon-speedometer
+        .footerlinks
+          // FOOTER LINKS START
+          ul
+            li
+              a(href='#hero') Home
+            li
+              a(href='#about') About
+            li
+              a(href='#services') Services
+            li
+              a(href='#portfolio') Portfolio
+            li
+              a(href='#testimonials') Testimonials
+            // replace the email address below with your email address
+            li
+              a(href='mailto:m@creatrix.us') Contact
+        // FOOTER LINKS END
+        .copyright
+          // FOOTER COPYRIGHT START
+          p
+            a(href='#') Drifolio
+            |  stands for Dribbble-Portolio. This is a free HTML template designed and coded by 
+            a(href='http://evenfly.com') EvenFly Team
+            | . All logo and images in this template used for preview purpose only. You are free to use the template but make sure to use your own images.
+        // FOOTER COPYRIGHT END
+        .footersocial.wow.fadeInUp(data-wow-duration='3s')
+          // FOOTER SOCIAL ICONS START
+          ul
+            li
+              a(href='http://facebook.com/MamunSrizon')
+                span.icon-social-facebook
+            li
+              a(href='http://twitter.com/MamunSrizon')
+                span.icon-social-twitter
+            li
+              a(href='#')
+                span.icon-social-youtube
+            li
+              a(href='http://dribbble.com/srizon')
+                span.icon-social-dribbble
+            li
+              a(href='#')
+                span.icon-social-tumblr
+        // FOOTER SOCIAL ICONS END
+    // FOOTER END
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='/bower/jquery/dist/jquery.min.js')
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='/bower/bootstrap/dist/js/bootstrap.min.js')
+    // Other necessary scripts
+    script(src='/home/js/jquery.nicescroll.min.js')
+    script(src='/home/js/jquery.jribbble-1.0.1.ugly.js')
+    script(src='/home/js/drifolio.js')
+    script(src='/bower/wow/dist/wow.min.js')
+    script.
+      new WOW().init();

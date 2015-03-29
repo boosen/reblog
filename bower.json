@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.2",
-    "epiceditor": "~0.2.3"
+    "epiceditor": "~0.2.3",
+    "wow": "~1.0.3"
   }
 }
