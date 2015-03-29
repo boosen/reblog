@@ -40,19 +40,24 @@ block content
                   button(type="button" data-url="/admin/blog/" + blog._id class="btn btn-danger blog-del") Delete
 block scripts
   script.
-    $('.blog-del').click(function(){
-      var url = $(this).data('url');
-      var _this = $(this);
+    $(function(){
+      $('.blog-del').click(function(){
+        if(confirm("Will delete this row")) {
+          var url = $(this).data('url');
+          var _this = $(this);
 
-      $.ajax({
-        type: 'delete',
-        url: url,
-        success: function(res) {
-          if (res.success) {
-            _this.parent().parent().remove();
-          }
+          $.ajax({
+            type: 'delete',
+            url: url,
+            success: function(res) {
+              if (res.success) {
+                _this.parent().parent().remove();
+              }
+            }
+          });
         }
       });
-    })
+    });
+
 
 

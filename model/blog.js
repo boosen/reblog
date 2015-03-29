@@ -3,10 +3,10 @@ var Schema = mongoose.Schema;
 
 var blogSchema = new Schema({
     content: String,
-    contentBegin: String,
+    content_begin: String,
     tags: [String],
     title: String,
-    data: Date,
+    date: {type: Date, default: Date.now},
     time: {
       year: String,
       month: String,
@@ -20,7 +20,7 @@ var blogSchema = new Schema({
       px600: String,
       px1366: String
     },
-    isTop: {
+    is_top: {
       type: Boolean,
       "default": false
     },
@@ -28,7 +28,7 @@ var blogSchema = new Schema({
       type: Number,
       "default": 0
     },
-    editDate: [
+    edit_date: [
       {
         date: Date,
         ip: String

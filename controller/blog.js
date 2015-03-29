@@ -1,6 +1,7 @@
 var Blog = require('../model/blog');
 var marked = require('marked');
 var env = require('jsdom').env;
+var mongoose = require('mongoose');
 var ArticleSub = require('../articleSub');
 
 // marked.setOptions({
@@ -27,7 +28,7 @@ var postPre = function(req,res, cb) {
     var content = req.body.content,
         contentHtml = marked(content),
         title = req.body.title,
-        tags = req.body.tags.trim().split('/\s+/g'),
+        tags = req.body.tags.trim().split(/\s+/g),
         imgs = [],
         img = '',
         text = ArticleSub.subArtc(contentHtml, 200).toString() + '',
@@ -54,7 +55,7 @@ var postPre = function(req,res, cb) {
 };
 
 exports.manageBlog = function(req, res) {
-  return Blog.find().sort({date:-1}).exec(function(err, blogs){
+  return Blog.find().sort({date:'desc'}).exec(function(err, blogs){
     return res.render('admin/manage_blog', {isMBActive: true, blogs: blogs});
   });
 };
@@ -68,7 +69,8 @@ exports.postBlog = function(req, res) {
     var blog = new Blog({
       content: content,
       title: title,
-      contentBegin: contentBegin,
+      content_begin: contentBegin,
+      tags: tags,
       img: {
         px600: img.replace('px1366', 'px600'),
         px200: img.replace('px1366', 'px200'),
@@ -114,3 +116,51 @@ exports.deleteBlog = function(req, res) {
     }
   });
 };
+
+exports.editBlogView = function(req, res) {
+  // console.log(req.params.id);
+  var id = mongoose.Types.ObjectId(req.params.id);
+  
+  return Blog.findById(id, null, function(err, blog) {
+    return res.render('admin/edit_blog', {blog:blog}); 
+  });
+};
+
+exports.editBlog = function(req, res) {
+  var id = req.params.id;
+  return postPre(req, res, function(content, title, tags, imgs, contentBegin, img, date, ip){
+    var blog = {
+      content: content,
+      title: title,
+      content_begin: contentBegin,
+      tags: tags,
+      img: {
+        px600: img.replace('px1366', 'px600'),
+        px200: img.replace('px1366', 'px200'),
+        original: img.replace('px1366', ''),
+        px1366: img
+      },
+      imgs: imgs
+    };
+
+    return Blog.update({
+        _id: id
+      }, {
+        $set: blog,
+        $push: {
+          "edit_date": {
+            date: date,
+            ip: ip
+          }
+        }
+      }, function(err, num, row) {
+        if (err && num === 0) {
+          return res.json({
+            success: false
+          });
+        } else {
+          return res.redirect('/admin/manage-blog');
+        }
+      });
+  });
+}

@@ -32,7 +32,9 @@ $(function(){
   var tagArea = $('.tag-area');
 
   createTags(tagInput.val())
-  tagInput.keydown(function(event){
+  tagInput.keyup(function(){
+    createTags($(this).val())
+  }).change(function(){
     createTags($(this).val())
   });
 
@@ -44,9 +46,5 @@ $(function(){
         $("<i/>").addClass("glyphicon glyphicon-tag")).append(" " + tags[i]));
     }
   }
-
-  $("#post-btn").click(function(){
-    
-  });
 });
 

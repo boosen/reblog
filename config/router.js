@@ -22,6 +22,8 @@ module.exports = function(app) {
 		.post(blog.postBlog);
 
 	app.route('/admin/blog/:id')
+		.get(blog.editBlogView)
+		.post(blog.editBlog)
 		.delete(blog.deleteBlog);
 			
 	// var blog = require('./blog');
