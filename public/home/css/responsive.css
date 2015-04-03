@@ -55,7 +55,18 @@
     
     /*Hero area*/
     #hero{height: 400px;}    
-    .herocontent{padding-top: 30px;}
+    .herocontent{padding-top: 100px;}
+
+    .banner-logo{
+        display: none;
+    }
+
+
+    .banner-content {
+        display: block;
+        position: absolute;
+        bottom: 30px;
+    }
     
     /*About section*/
     #about{text-align: center;}
@@ -77,7 +88,7 @@
 /* Smallest Mobile Devices */
 @media only screen and (max-width : 320px) {
     #hero{height: 480px;}
-    .herocontent{padding-top: 100px; padding-bottom: 30px;}
+    .herocontent{padding-top: 200px; padding-bottom: 30px;}
 
 }
 

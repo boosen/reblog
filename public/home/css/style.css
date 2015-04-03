@@ -73,14 +73,13 @@ HERO AREA
 ================================*/
 #hero{
     color: #fff;
-    text-align: center;
-    background: url(../img/trianglify-background.svg)no-repeat; /*your background image*/
+    background: url(../../images/bannerbg.png)no-repeat; /*your background image*/
     max-height: 880px;
     overflow: hidden;
 }
 
 .herocontent{
-    padding-top: 100px;
+    padding-top: 200px;
     width: 100%;
     max-width: 900px;
 }
@@ -315,3 +314,27 @@ FOLLOW BUTTON
     border-right-color: white;
 }
 
+.banner-logo,.banner-content{
+    display: inline-block;
+}
+.banner-logo img{
+    float: right;
+    margin-top: 10px;
+}
+
+.banner-content h2{
+    margin: 0px;
+    color: #c5b7b8;
+    font-size: 35px;
+}
+.banner-content h2 span{
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.banner-content h3{
+    color: #281d24;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+}
