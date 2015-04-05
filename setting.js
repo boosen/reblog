@@ -4,10 +4,10 @@ module.exports = {
 	db: 'reblog',
 	host: 'localhost',
 	root: __dirname,
-	perPageBlogSize: 10,
+	perPageBlogSize: 5,
 	loginUser: 'bushen.shi@hotmail.com',
 	loginPwd: 'captain',
 	titles: {
-		
+		blogIndex: 'reblog'
 	}
 };

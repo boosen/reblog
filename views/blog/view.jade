@@ -5,10 +5,9 @@ body
 
   .container.blog-info
     .col-md-10.col-md-offset-1
-      h1 my first name
+      h1=blog.title
         small
-          i 2010-10-20
-      .blog-info-content
-        p slkjfldskjfsdlkj  kdjflksj sdlkfj sdlfkjdsf
+          i=blog.time.day
+      .blog-info-content!=blog.content
 
 include footer.jade

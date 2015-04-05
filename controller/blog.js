@@ -3,6 +3,9 @@ var marked = require('marked');
 var env = require('jsdom').env;
 var mongoose = require('mongoose');
 var ArticleSub = require('../articleSub');
+var setting = require('../setting')
+
+var perPage = setting.perPageBlogSize;
 
 // marked.setOptions({
 //   renderer: new marked.Renderer(),
@@ -166,9 +169,30 @@ exports.editBlog = function(req, res) {
 };
 
 exports.index = function(req, res) {
-  res.render('blog/index');
+  return Blog.perPageBlogIndex(perPage, function(err, blogs, count) {
+    if (err) {
+      blogs = [];
+    } else {
+      return res.render('blog/index', {
+        title: setting.titles.blogIndex,
+        blogs: blogs,
+        onlyOne: count <= perPage,
+      });
+    }
+  });
 };
 
 exports.view = function(req, res) {
-  res.render('blog/view')
+  var id = req.params.id;
+  return Blog.blogById(id, function(err, blog) {
+    if (err) {
+      blog = {};
+    } else {
+      blog.content = marked(blog.content);
+      return res.render('blog/view', {
+        title: blog.title + " - " + setting.titles.blogIndex,
+        blog: blog
+      })
+    }
+  });
 }

@@ -36,10 +36,56 @@ var blogSchema = new Schema({
     ]
 });
 
-blogSchema.Statics = {
-
-}
+blogSchema.statics = {
+  perPageBlogIndex: function(perPage, cb){
+    var blogThis = this;
+    return this.count().exec(function(err, count){
+      if(err) {
+        return cb(err, null, 0);
+      } else {
+        return blogThis.find({})
+          .sort({date: -1})
+          .limit(perPage)
+          .exec(function(err, blogs) {
+            if (err) {
+              return cb(err, null, 0);
+            } else {
+              return cb(null, blogs, count);
+            }
+          });
+      }
+    });
+  },
+  perPageBlogs: function(perPage, page, cb) {
+    var blogThis = this;
+    return this.count().exec(function(err, count) {
+      if (err) {
+        return cb(err, null, 0);
+      } else {
+        return blogThis.find({})
+          .sort({date: -1})
+          .skip((page-1)*perPage)
+          .limit(perPage)
+          .exec(function(err, blogs) {
+            if (err) {
+              return cb(err, null, 0);
+            } else {
+              return cb(null, blogs, count);
+            }
+          });
+      }
+    });
+  },
+  blogById: function(id, cb) {
+    return this.findById(id).exec(function(err, blog) {
+      if (err) {
+        return cb(err, null);
+      } else {
+        return cb(null, blog);
+      }
+    });
+  }
+};
 
 var Blog = mongoose.model('Blog', blogSchema);
-
 module.exports = Blog;
