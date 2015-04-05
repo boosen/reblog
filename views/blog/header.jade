@@ -1,0 +1,70 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name='description', content='reblog')
+    meta(name='keywords', content='blog, nodejs')
+    meta(name='author', content='Bushen Shi')
+
+    title reblog
+
+    link(rel='icon', href='img/favicon.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='img/apple-touch-icon-ipad-retina.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='img/apple-touch-icon-iphone-retina.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='img/apple-touch-icon-ipad.png')
+    link(rel='apple-touch-icon', sizes='57x57', href='img/apple-touch-icon-iphone.png')
+
+    link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/blog/css/style.css')
+    link(rel='stylesheet', href='/blog/css/responsive.css')
+
+    link(rel='stylesheet', href='/home/css/simple-line-icons.css')
+
+  body
+    header
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation') 
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/#hero')
+              // Replace Drifolio Bootstrap with your Site Name and remove icon-grid to remove the placeholder icon
+              span.brandicon.icon-grid
+              span.brandname Drifolio Bootstrap
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              // YOUR NAVIGATION ITEMS STRAT BELOW
+              li
+                a(href='/#about')
+                  span.btnicon.icon-user
+                  | About
+              li
+                a(href='/#services')
+                  span.btnicon.icon-cup
+                  | Services
+              li
+                a(href='/#portfolio')
+                  span.btnicon.icon-rocket
+                  | Portfolio
+              li
+                a(href='/#testimonials')
+                  span.btnicon.icon-bubble
+                  | Testimonials
+              li
+                a(href='/blog' target="__blank")
+                  span.btnicon.icon-note
+                  | Blog
+              // don't forget to replace my email address below with yours
+              li
+                a(href='mailto:bushen.shi@hotmail.com')
+                  span.btnicon.icon-envelope-open
+                  | Contact
+              li.active
+                a(href='')
+                  span.btnicon.icon-cloud-download
+                  | Download CV

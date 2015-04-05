@@ -24,5 +24,6 @@ module.exports = function(app) {
 		.post(blog.editBlog)
 		.delete(blog.deleteBlog);
 			
-	// var blog = require('./blog');
+	app.get('/blog', blog.index);
+	app.get('/blog/:id', blog.view);
 };

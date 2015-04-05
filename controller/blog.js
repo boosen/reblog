@@ -163,4 +163,12 @@ exports.editBlog = function(req, res) {
         }
       });
   });
+};
+
+exports.index = function(req, res) {
+  res.render('blog/index');
+};
+
+exports.view = function(req, res) {
+  res.render('blog/view')
 }

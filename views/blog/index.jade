@@ -1,0 +1,24 @@
+include header.jade
+body
+  header
+    #cover
+      .container.banner-content
+        h2 Welcome to my blog
+    include nav.jade
+  
+  #blog-list.container
+    .col-md-10.col-md-offset-1
+      each val, index in [1, 2, 3, 4]
+        .row.blog-each
+          h2
+            a(href="#") My first blog
+            small
+              i 2012-12-30
+          .blog-index-content
+            .blog-img
+              img(class="img-responsive" src="http://lingyong-me.qiniudn.com/QQ20141030-1@2x.png%202014-10-30%2011:21-px1366")
+            .blog-content
+              P sdfjlsdfjlsjf this k is lksfldsl thksdfn jkjsfdlk
+  
+include footer.jade
+        
