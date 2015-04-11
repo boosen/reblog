@@ -1,7 +1,9 @@
 extends base.jade
 
 block title
-    title Reblog - post blog
+  title Reblog - post blog
+block csses
+  link(rel='stylesheet',href='/bower/highlightjs/styles/default.css')
 
 block content
   .row
@@ -9,8 +11,8 @@ block content
       form(method="post" action="/admin/post-blog")
         input(class="form-control post-title post-com" type="text" name="title" required="required" placeholder="write title here ..")
         legend
-        div#epiceditor
-        textarea(id='content_editor' required="required" name='content' style='display:none;')
+        div.suMarkdown
+          include suMarkdown.jade
 
         .tag-area.post-com
           span.tag-info
@@ -24,5 +26,9 @@ block content
         button(id="post-btn" type="submit" class="post-com btn btn-primary") SUBMIT
 
 block scripts
-  script(src="/bower/epiceditor/epiceditor/js/epiceditor.js")
+  script(src="/bower/highlightjs/highlight.pack.js")
+  script.
+    hljs.initHighlightingOnLoad();
+  script(src="/bower/marked/marked.min.js")
+  script(src="/suMarkdown/js/suMarkdown.js")
   script(src="/javascripts/main.js")
