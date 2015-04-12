@@ -10,6 +10,7 @@ block content
         input(class="form-control post-title post-com" type="text" value="#{blog.title}" name="title" required="required" placeholder="write title here ..")
         legend
         div.suMarkdown
+          textarea(id="content_hidden" style="display:none")= blog.content
           include suMarkdown.jade
 
         .tag-area.post-com
@@ -30,6 +31,8 @@ block scripts
   script(src="/bower/marked/marked.min.js")
   script(src="/suMarkdown/js/suMarkdown.js")
   script(src="/javascripts/main.js")
-  //- script.
-    //- var blog = "#{blog.content}";
-    //- $('#content_editor').val("#{blog.content}")
+  script.
+    var blogContent = $('#content_hidden').val();
+
+    $('#content_editor').val($('#content_hidden').val())
+    $('.suPreview').html(marked(blogContent));

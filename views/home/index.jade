@@ -45,6 +45,7 @@ html(lang='en')
         //- img.heroshot.wow.bounceInUp(data-wow-duration='4s', src='/home/img/hero-img.png', alt='Featured Work')
       
       nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation') 
+        
         .container
           .navbar-header
             button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -210,12 +211,13 @@ html(lang='en')
       .portfolioitems.container
         ul
           #shotsByPlayerId
+            //- https://d13yacurqjgara.cloudfront.net/users/149279/screenshots/1931773/happy-valentines-day_teaser.gif
             - var n = 0
             while n < 6
               - n++
               li
                 a(href='http://dribbble.com/shots/1931773-Happy-Valentines-Day-Animation')
-                  img(alt='Happy Valentines Day Animation', src='https://d13yacurqjgara.cloudfront.net/users/149279/screenshots/1931773/happy-valentines-day_teaser.gif')
+                  img(alt='Happy Valentines Day Animation', src='')
                 h3
                   a(href='http://dribbble.com/shots/1931773-Happy-Valentines-Day-Animation') Happy Valentines Day Animation
                 .likecount

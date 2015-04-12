@@ -11,13 +11,23 @@ body
       each blog, index in blogs
         .row.blog-each
           h2
-            a(href="/blog/#{blog._id}")=blog.title
+            a(class="blog-title" href="/blog/#{blog._id}")=blog.title
             small
               i=blog.time.day
-          .blog-index-content
-            .blog-img
-              img(class="img-responsive" src="http://lingyong-me.qiniudn.com/QQ20141030-1@2x.png%202014-10-30%2011:21-px1366")
+          .blog-info-content
+            if blog.img.original
+              .blog-img
+                img(class="img-responsive" onerror="this.style.display='none'" src="#{blog.img.original}")
             .blog-content!=blog.content_begin
+            //- a(href="/blog/#{blog._id}") >>更多
+           if blog.tags 
+            ul.blog-tags
+              li.blog-date= blog.time.day
+              each tag in blog.tags 
+                li
+                  i.glyphicon.glyphicon-tag
+                  | &nbsp; #{tag}
+
   
 include footer.jade
         

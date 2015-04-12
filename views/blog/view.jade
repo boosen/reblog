@@ -2,12 +2,25 @@ include header.jade
 body
   header
     include nav.jade
-
+    
   .container.blog-info
     .col-md-10.col-md-offset-1
       h1=blog.title
         small
           i=blog.time.day
       .blog-info-content!=blog.content
-
-include footer.jade
+      .blog-comments
+        #disqus_thread
+  include footer.jade
+  script.
+    $('img').addClass('img-responsive')
+    
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'boosen';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
